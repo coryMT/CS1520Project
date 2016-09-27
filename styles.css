@@ -1,0 +1,54 @@
+* {
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.nav {
+  width: 100%;
+  text-align:center;
+}
+
+nav {
+  overflow: hidden;
+}
+
+nav ul{
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+nav ul li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+nav > ul > li > a {
+  display: block;
+  line-height: 2em;
+  padding: 0px 20px;
+  text-decoration: none;
+}
+
+.active {
+
+}
+
+form {
+  margin: auto;
+}
+
+.formBody {
+  display: flex;
+}
+
+input, textarea {
+  display: block;
+}
+
+#headshot {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 0;
+  height: 100px;
+  width: 100px;
+}
+
