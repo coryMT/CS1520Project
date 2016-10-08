@@ -2,13 +2,37 @@
   font-family: 'Fira Sans', sans-serif;
 }
 
+#headshot {
+  margin: auto;
+  height: 100px;
+  width: 100px;
+}
+
+#aboutDiv {
+  border: 20px rgb(18, 35, 105);
+}
+
+#educationDiv {
+  border: 20px rgb(47, 160, 170);
+}
+
+#experienceDiv {
+  border: 20px rgb(18, 35, 105);
+}
+
+#contactDiv {
+  border: 20px rgb(47, 160, 170);
+}
+
 .nav {
+  position: relative;
   margin: auto;
   text-align:center;
   border-radius: 15px;
-  background-color: #342800;
   padding: 20px;
   width: 75%;
+  background-color: rgb(74, 212, 206);
+  color: white;
 }
 
 .sticky {
@@ -23,6 +47,8 @@
   width: 65%;
   padding: 0px;
   border-radius: 10px;
+  background-color: rgb(74, 212, 206);
+  color: white;
 }
 
 .outer {
@@ -34,8 +60,12 @@
 }
 
 body {
-  background-color: #73AFB6;
-  color: white;
+
+}
+
+p.picture {
+  text-align: center;
+  position: relative;
 }
 
 
@@ -45,7 +75,7 @@ a {
 }
 
 nav {
-  overflow: hidden;
+
 }
 
 nav ul {
@@ -80,12 +110,5 @@ input, textarea {
   display: block;
 }
 
-#headshot {
-  vertical-align: middle;
-  display: inline-block;
-  margin: 0 auto;
-  padding: 0;
-  height: 100px;
-  width: 100px;
-}
+
 
