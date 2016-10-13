@@ -8,38 +8,35 @@
   </head>
 
   <body>
-
     <header>
-      <div class="heading">
-        <p class="picture">
-          <img src="images/headshot.png" alt="headshot of myself" id="headshot"/>
-        </p>
+      <p class="picture">
+        <img src="images/headshot.png" alt="headshot of myself" id="headshot"/>
+      </p>
 
-        <div class="nav">
-          <nav>
-            <ul>
-              <li>
-                <a href="#about">ABOUT ME</a>
-              </li>
-              <li>
-                <a href="#education">EDUCATION</a>
-              </li>
-              <li>
-                <a href="#experience">EXPERIENCE</a>
-              </li>
-              <li>
-                <a href="#contact">CONTACT ME</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+      <div id="nav" class="nav">
+        <nav>
+          <ul>
+            <li>
+              <a href="#about">BIO</a>
+            </li>
+            <li>
+              <a href="#education">EDUCATION</a>
+            </li>
+            <li>
+              <a href="#experience">EXPERIENCE</a>
+            </li>
+            <li>
+              <a href="#contact">CONTACT</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
 
     <section id="aboutMe">
       <div id="aboutDiv">
         <a name="about"></a>
-        <h1>Me</h1>
+        <h1>Bio</h1>
         <p>
           Hi! I'm a Computer Science student at the University of Pittsburgh.<br>
           I also work for the university as a technical consultant at the IT support desk.<br>
@@ -64,11 +61,6 @@
               <li>
                 <p>
                   B.S. Computer Science (May 2017)
-                </p>
-              </li>
-              <li>
-                <p>
-                  Dean's List
                 </p>
               </li>
               <li>
@@ -127,7 +119,6 @@
               </li>
             </ul>
           </li>
-          <br>
           <li>
             <p>
               Software Engineering Internship (June 2015 to August 2015)<br>
@@ -148,7 +139,6 @@
               </li>
             </ul>
           </li>
-          <br>
           <li>
             <p>
               Student Technical Consultant (August 2014 to Present)<br>
@@ -174,7 +164,6 @@
               </li>
             </ul>
           </li>
-          <br>
           <li>
             <p>
               Landscaping Crew Member (June 2007 to August 2014)<br>
@@ -219,6 +208,24 @@
               </li>
             </ul>
           </li>
+          <li>
+            <p>
+              Development Tools
+            </p>
+
+            <ul>
+              <li>
+                <p>
+                  Build Tools: Gradle, Maven
+                </p>
+              </li>
+              <li>
+                <p>
+                  IDEs: Eclipse, Xcode, Android Studio (IDEA)
+                </p>
+              </li>
+            </ul>
+          </li>
         </ul>
       </div>
     </section>
@@ -228,16 +235,39 @@
         <a name="contact"></a>
         <h1>Contact Me</h1>
 
-        <form>
-          <fieldset>
-            <label for="name">First and Last Name</label>
-            <input id="name" type="text" name="name" placeholder="Name">
-            <label for="email">Email Address</label>
-            <input id="email" type="text" name="email" placeholder="Email Address">
-            <textarea name="message" rows="15" cols="50" placeholder="Message"></textarea>
-            <input type="submit" value="Submit">
-          </fieldset>
-        </form>
+        <div class="flex-parent">
+          <div id="inputs">
+            <form>
+              <fieldset>
+                <ul>
+                  <li>
+                    <label for="firstName">First Name:</label>
+                    <input id="firstName" type="text" name="firstName" placeholder="First Name">
+                  </li>
+                  <li>
+                    <label for="lastName">Last Name:</label>
+                    <input id="lastName" type="text" name="lastName" placeholder="Last Name">
+                  </li>
+                  <li>
+                    <label for="email">Email Address:</label>
+                    <input id="email" type="text" name="email" placeholder="Email Address"><br>
+                  </li>
+                </ul>
+              </fieldset>
+            </form>
+          </div>
+
+          <div id="messageBox">
+            <textarea id="message" name="message" rows="15" cols="50" placeholder="Message"></textarea>
+            <p id="error">
+              <!-- JavaScript will fill this as part of error handling. -->
+            </p>
+
+            <input type="button" onclick="submitForm()" value="Submit">
+          </div>
+          <div class="clear"></div>
+        </div>
+
       </div>
     </section>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
