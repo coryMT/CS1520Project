@@ -1,5 +1,5 @@
 <?php
-  require_once("php/insertData.php");
+
 ?>
 
 <!doctype html>
@@ -241,7 +241,7 @@
 
         <div class="flex-parent">
           <div id="inputs">
-            <form action="php/insertData.php" method="post" onsubmit="return submitForm()">
+            <form action="php/insertData.php" method=POST onsubmit="return submitForm();">
               <fieldset class="flex-field">
                 <ul class="flexed">
                   <li>
@@ -258,20 +258,20 @@
                   </li>
                 </ul>
               </fieldset>
+
+              <div id="messageBox">
+                <textarea id="message" name="message" rows="15" cols="50" placeholder="Message"></textarea>
+                <p id="error">
+                  <!-- JavaScript will fill this as part of error handling. -->
+                </p>
+
+                <input type="submit" value="Submit">
+              </div>
+
+              <div class="clear"></div>
             </form>
           </div>
-
-          <div id="messageBox">
-            <textarea id="message" name="message" rows="15" cols="50" placeholder="Message"></textarea>
-            <p id="error">
-              <!-- JavaScript will fill this as part of error handling. -->
-            </p>
-
-            <input type="submit" value="Submit">
-          </div>
-          <div class="clear"></div>
         </div>
-
       </div>
     </section>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
