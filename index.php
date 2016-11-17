@@ -1,31 +1,5 @@
 <?php
-  $server = "localhost";
-  $user = "";
-  $password = "";
-
-  $db = new mysqli($server, $user, $password);
-
-  if($db->connect_error) {
-    die("Connection Failed" . mysqli_connect_error());
-  }
-
-  $sql = "create database myDB";
-
-  if($db->query($sql) == false) {
-    echo "Could not create database. " . mysqli_error($db);
-  }
-
-  //Create table
-  $sql = "create table contact (
-    firstName varchar(50) not null, 
-    lastName varchar(50) not null,
-    email varchar(100) not null,
-    message varchar(300) not null,
-    submissionDate timestamp
-  )";
-
-  $db->query($sql);
-
+  require_once("php/insertData.php");
 ?>
 
 <!doctype html>
@@ -267,7 +241,7 @@
 
         <div class="flex-parent">
           <div id="inputs">
-            <form>
+            <form action="php/insertData.php" method="post" onsubmit="return submitForm()">
               <fieldset class="flex-field">
                 <ul class="flexed">
                   <li>
@@ -293,7 +267,7 @@
               <!-- JavaScript will fill this as part of error handling. -->
             </p>
 
-            <input type="button" onclick="submitForm()" value="Submit">
+            <input type="submit" value="Submit">
           </div>
           <div class="clear"></div>
         </div>
