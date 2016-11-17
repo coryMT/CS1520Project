@@ -3,20 +3,21 @@ $server = "localhost";
 $user = "root";
 $password = "root";
 
-$db = new mysqli($server, $user, $password);
+$db = mysqli_connect($server, $user, $password);
 
 if($db->connect_error) {
   die("Connection Failed" . mysqli_connect_error());
 }
 
-$sql = "create database if not exists myDB";
-
-if($db->query($sql) == false) {
-  echo "Could not create database. " . mysqli_error($db);
+if(!mysqli_select_db($db, 'myDB')) {
+  $sql = "create database if not exists myDB";
+  if(!mysqli_query($db, $sql)) {
+    echo "Could not create database. " . mysqli_error($db);
+  }
 }
 
 //Create table
-$sql = "create table if not exists contact (
+$sql2 = "create table if not exists contact (
     firstName varchar(50) not null, 
     lastName varchar(50) not null,
     email varchar(100) not null,
@@ -24,7 +25,9 @@ $sql = "create table if not exists contact (
     submissionDate timestamp
   )";
 
-$db->query($sql);
+if(!mysqli_query($db, $sql2)) {
+  echo "Could not create table. " . mysqli_error($db);
+}
 
 $tempFirstName = $_POST['firstName'];
 $tempLastName = $_POST['lastName'];
@@ -36,10 +39,10 @@ $lastName = mysqli_real_escape_string($db, $tempLastName);
 $email = mysqli_real_escape_string($db, $tempEmail);
 $message = mysqli_real_escape_string($db, $tempMessage);
 
-$sql = "insert into contact (firstName, lastName, email, message, submissionData) values ('$firstName', '$lastName', '$email', '$message', now())";
+$sql3 = "insert into contact (firstName, lastName, email, message, submissionDate) values ('$firstName', '$lastName', '$email', '$message', now())";
 
-if($db->query($sql) == false) {
-  echo "ERROR: sql query failed.";
+if(!mysqli_query($db, $sql3)) {
+  echo "Insert failed.  " . mysqli_error($db);
 } else {
   echo "Success!";
 }
