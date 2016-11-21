@@ -1,13 +1,10 @@
-<?php
-
-?>
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <title>Cory Trbojevic</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css?v=<?=time();?>">
     <link href="https://fonts.googleapis.com/css?family=Bungee|Fira+Sans" rel="stylesheet">
   </head>
 
@@ -38,7 +35,7 @@
     </header>
 
     <section id="aboutMe">
-      <div id="aboutDiv">
+      <div id="aboutDiv" class="slider">
         <a name="about"></a>
         <h1>Bio</h1>
         <p>
@@ -51,7 +48,7 @@
     </section>
 
     <section id="myEducation">
-      <div id="educationDiv">
+      <div id="educationDiv" class="slider">
         <a name="education"></a>
         <h1>Education</h1>
 
@@ -93,7 +90,7 @@
 
 
     <section id="myExperience">
-      <div id="experienceDiv">
+      <div id="experienceDiv" class="slider">
         <a name="experience"></a>
         <h1>Experience</h1>
 
@@ -235,7 +232,7 @@
     </section>
 
     <section id="contactMe">
-      <div id="contactDiv">
+      <div id="contactDiv" class="slider">
         <a name="contact"></a>
         <h1>Contact Me</h1>
 
