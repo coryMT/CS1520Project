@@ -1,6 +1,8 @@
 (function($) {
 
   /**
+   * This function was not written by me. Credit to:
+   *
    * Copyright 2012, Digital Fusion
    * Licensed under the MIT license.
    * http://teamdf.com/jquery-plugins/license/
@@ -10,7 +12,6 @@
    *     the user visible viewport of a web browser.
    *     only accounts for vertical position, not horizontal.
    */
-
   $.fn.visible = function(partial) {
 
     var $t            = $(this),
@@ -28,9 +29,10 @@
 
 })(jQuery);
 
+//Cache all sections
 var allSliders = $('.slider');
 
-
+//This is used for animating sections, just adds a class already-in so that they can't be animated again
 allSliders.each(function(i, el) {
   var element = $(el);
   if (element.visible(true)) {
@@ -38,9 +40,39 @@ allSliders.each(function(i, el) {
   }
 });
 
+//Cache all the links in my nav menu
+var navLinks = $('#nav > nav > ul > li > a');
+var sections = $('.slider');
+
+//Map each section to its corresponding nav link
+var sectionToLink = {};
+sections.each(function() {
+  sectionToLink[$(this).attr('id')] = $('#nav > nav > ul > li > a[href =\\#' + $(this).attr('id') + ']');
+});
+
+//Highlights an optino in the nav menu when that section is the one currently in the top of the screen
+function highlight() {
+  var scrollPos = $(window).scrollTop();
+
+  sections.each(function() {
+    var sectionTop = $(this).offset().top;
+    if(scrollPos <= sectionTop) {
+      var id = $(this).attr('id');
+      var navLink = sectionToLink[id];
+      if(!navLink.hasClass('active-menu')) {
+        navLinks.removeClass('active-menu');
+        navLink.addClass('active-menu');
+      }
+      return false;
+    }
+  });
+}
+
 $(window).scroll(function() {
 
- if($(window).scrollTop() == 0) {
+  highlight();
+
+  if($(window).scrollTop() == 0) {
     allSliders.each(function(i, el) {
       var element = $(el);
       element.removeClass('already-in');
@@ -64,16 +96,16 @@ $(window).scroll(function() {
 });
 
 function submitForm() {
-  if(document.getElementById('firstName').value == '') {
+  if (document.getElementById('firstName').value == '') {
     document.getElementById('error').innerHTML = 'You must enter your first name.';
     return false;
-  } else if(document.getElementById('lastName').value == '') {
+  } else if (document.getElementById('lastName').value == '') {
     document.getElementById('error').innerHTML = 'You must enter your last name.';
     return false;
-  } else if(document.getElementById('email').value == '') {
+  } else if (document.getElementById('email').value == '') {
     document.getElementById('error').innerHTML = 'You must enter your email address.';
     return false;
-  } else if(document.getElementById('message').value == '') {
+  } else if (document.getElementById('message').value == '') {
     document.getElementById('error').innerHTML = 'Please send a short message about why you are contacting me!';
     return false;
   } else {

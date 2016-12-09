@@ -41,10 +41,14 @@ $message = mysqli_real_escape_string($db, $tempMessage);
 
 $sql3 = "insert into contact (firstName, lastName, email, message, submissionDate) values ('$firstName', '$lastName', '$email', '$message', now())";
 
-if(!mysqli_query($db, $sql3)) {
-  echo "Insert failed.  " . mysqli_error($db);
-} else {
-  echo "Success!";
-}
+$result = mysqli_query($db, $sql3);
 
 mysqli_close($db);
+
+if ($result) {
+  echo "Insert successful";
+  echo '<meta http-equiv="refresh" content="0; url=http://localhost:8888/index.php">';
+} else {
+  echo "Insert failed!";
+}
+

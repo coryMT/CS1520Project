@@ -18,16 +18,16 @@
         <nav>
           <ul>
             <li class="menu">
-              <a href="#about">BIO</a>
+              <a href="#aboutDiv">BIO</a>
             </li>
             <li class="menu">
-              <a href="#education">EDUCATION</a>
+              <a href="#educationDiv">EDUCATION</a>
             </li>
             <li class="menu">
-              <a href="#experience">EXPERIENCE</a>
+              <a href="#experienceDiv">EXPERIENCE</a>
             </li>
             <li class="menu">
-              <a href="#contact">CONTACT</a>
+              <a href="#contactDiv">CONTACT</a>
             </li>
           </ul>
         </nav>
@@ -272,7 +272,7 @@
       </div>
     </section>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="js/myScript.js"></script>
+    <script src="js/myScript.js?v=<?=time();?>"></script>
     <noscript>You need to turn on JavaScript for this to work!</noscript>
   </body>
 </html>
