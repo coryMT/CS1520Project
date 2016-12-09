@@ -147,6 +147,36 @@ p.picture {
   color: white;
 }
 
+.footer {
+  text-align: center;
+}
+
+.footer > ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+.footer > ul > li {
+  text-align: center;
+  display: inline-block;
+  margin: 15px;
+}
+
+input[type=text] {
+  border:2px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type=submit] {
+  background:rgb(47, 160, 170);
+  border:0 none;
+  cursor:pointer;
+  border-radius: 5px;
+  color: white;
+  width: 70px;
+  height: 30px;
+}
+
 body {
   font-family: 'Fira Sans', sans-serif;
 }
@@ -211,6 +241,9 @@ fieldset {
 textarea {
   width: 300px;
   height: 150px;
+  resize: none;
+  border-radius: 5px;
+  border:2px solid #ccc;
 }
 
 form {

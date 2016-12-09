@@ -68,10 +68,10 @@ function highlight() {
   });
 }
 
+//fire on scroll
 $(window).scroll(function() {
 
-  highlight();
-
+  //remove all animation classes
   if($(window).scrollTop() == 0) {
     allSliders.each(function(i, el) {
       var element = $(el);
@@ -80,6 +80,7 @@ $(window).scroll(function() {
     });
   }
 
+  //animate based on which section is scrolling up from bottom
   allSliders.each(function(i, el) {
     var element = $(el);
     if (element.visible(true)) {
@@ -87,14 +88,20 @@ $(window).scroll(function() {
     }
   });
 
+  //add sticky menu if it gets below the main picture
   if($(this).scrollTop() > $('header').height()) {
-    $('.nav').addClass('sticky');
+    $('.nav').addClass('sticky'); //add sticky menu if scrolled below header image
+    highlight();
   } else {
-    $('.nav').removeClass('sticky');
+    $('.nav').removeClass('sticky'); //remove sticky menu when scrolled to header image
+
+    //if we're back at the top and remove the sticky menu, also need to unhighlight everything
+    navLinks.removeClass('active-menu');
   }
 
 });
 
+//verify form inputs before sending to database
 function submitForm() {
   if (document.getElementById('firstName').value == '') {
     document.getElementById('error').innerHTML = 'You must enter your first name.';

@@ -39,7 +39,7 @@
         <a name="about"></a>
         <h1>Bio</h1>
         <p>
-          Hi! I'm a Computer Science student at the University of Pittsburgh.<br>
+          Hi! My name is Cory Trbojevic, and I'm a Computer Science student at the University of Pittsburgh.<br>
           I also work for the university as a technical consultant at the IT support desk.<br>
           When I'm not studying or working, I'm probably playing an RPG, listening to music,<br>
           or reading about politics.
@@ -271,6 +271,23 @@
         </div>
       </div>
     </section>
+
+    <footer>
+      <div class="footer">
+        <ul>
+          <li>
+            <a href="https://github.com/coryMT">GitHub</a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/cory-trbojevic-68564855">LinkedIn</a>
+          </li>
+          <li>
+            <p>Copyright © 2016</p>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="js/myScript.js?v=<?=time();?>"></script>
     <noscript>You need to turn on JavaScript for this to work!</noscript>
